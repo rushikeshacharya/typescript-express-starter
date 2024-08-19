@@ -26,7 +26,7 @@ export class AuthResolver extends AuthRepository {
     description: 'User logout',
   })
   async logout(@Ctx('user') userData: any): Promise<User> {
-    const user = await this.userLogOut(userData);
+    const user = await this.userLogOut(userData.id);
     return user;
   }
 }
